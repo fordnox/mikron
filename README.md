@@ -1,7 +1,9 @@
-mikron
+Mikron
 ======
 
-PHP Simple PDO data mapper
+[![Build Status](https://travis-ci.org/fordnox/mikron.svg)](https://travis-ci.org/fordnox/mikron)
+
+Simple PHP PDO data mapper
 
 Maps database rows to simple PHP object and **nothing more**.
 
@@ -19,7 +21,7 @@ Simple model class:
         public $name;
     }
 
-Map database values to Entity class
+Maps database values to Entity class
 
     $mikron = new Mikron(new Pdo(...));
     $entity = $mikron->load('entity', 1);
