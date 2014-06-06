@@ -11,6 +11,12 @@
          syntaxCheck="false"
         >
 
+    <testsuites>
+        <testsuite name="Main">
+            <file>MikronTest.php</file>
+        </testsuite>
+    </testsuites>
+
     <php>
         <var name="DB_DSN" value="mysql:dbname=mikron;host=localhost"/>
         <var name="DB_USER" value="root"/>
