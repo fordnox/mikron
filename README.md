@@ -33,3 +33,12 @@ Maps database values to Entity class
     $entity = $mikron->load('entity', 1);
     print $entity->id;
     print $entity->name;
+
+
+Custom entity names and table names
+======
+
+Define custom function to map entities to table names and vice versa.
+By default entity name is same as table name.
+
+    $this->mikron->setNameResolver(function($type, $name) { return ucfirst($name); });
