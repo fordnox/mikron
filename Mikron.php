@@ -109,7 +109,7 @@ class Mikron
     {
         $table = $this->getTableName($type);
         $class = $this->getClassName($type);
-        $sql = "SELECT * FROM $table WHERE $sql LIMIT 1";
+        $sql = "SELECT * FROM $table WHERE $sql";
         $stmt = $this->pdo->prepare($sql);
         $stmt->setFetchMode( \PDO::FETCH_CLASS, $class );
         $stmt->execute($values);

@@ -100,7 +100,16 @@ class MikronTest extends PHPUnit_Framework_TestCase
 
     public function testFindAll()
     {
+        $newEntity = new Entity();
+        $newEntity->name = 'Name 1';
+        $this->mikron->store($newEntity);
+
+        $newEntity = new Entity();
+        $newEntity->name = 'Name 2';
+        $this->mikron->store($newEntity);
+
         $entities = $this->mikron->findAll("entity", "1");
+        $this->assertEquals(2, count($entities));
         foreach($entities as $entity) {
             $this->assertInstanceOf('Entity', $entity);
         }
@@ -128,6 +137,7 @@ class MikronTest extends PHPUnit_Framework_TestCase
         $this->mikron->store($newEntity);
 
         $list = $this->mikron->getAll("SELECT * FROM entity WHERE 1");
+        $this->assertEquals(2, count($list));
         foreach($list as $item) {
             $this->assertInternalType('array', $item);
             $this->assertEquals('Name', $item['name']);
