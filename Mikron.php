@@ -67,10 +67,14 @@ class Mikron
 
         $table = $this->getTableName($object);
         $values = array();
-        $keys = array_keys(get_class_vars(get_class($object)));
-        foreach($keys as $k) {
-            $values[$k] = $object->{$k};
+        $reflector = new ReflectionClass($object);
+        foreach($reflector->getProperties() as $prop) {
+            $comment = $prop->getDocComment();
+            if(strpos($comment, '@primary') || strpos($comment, '@field')) {
+                $values[$prop->getName()] = $prop->getValue($object);
+            }
         }
+        $keys = array_keys($values);
         if(is_null($object->id)) {
             $str = '`'.implode('`, `', $keys).'`';
             $str2 = ':'.implode(', :', $keys);

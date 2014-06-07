@@ -2,8 +2,13 @@
 
 class Entity
 {
+    /** @primary */
     public $id;
+
+    /** @field */
     public $name;
+
+    public $skip;
 }
 
 class MikronTest extends PHPUnit_Framework_TestCase

@@ -17,8 +17,14 @@ Simple model class:
 
     class Entity
     {
+        /** @field */
         public $id;
+
+        /** @field */
         public $name;
+
+        /** Not a field */
+        public $anything;
     }
 
 Maps database values to Entity class
