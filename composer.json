@@ -1,7 +1,7 @@
 {
     "name": "fordnox/mikron",
     "description": "PDO to object mapper",
-    "keywords": ["mapped", "simple"],
+    "keywords": ["simple", "pdo", "data mapper"],
     "homepage": "https://github.com/fordnox/mikron",
     "type": "library",
     "license": "Apache-2.0",
