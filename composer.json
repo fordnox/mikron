@@ -1,7 +1,7 @@
 {
     "name": "fordnox/mikron",
     "description": "PDO to object mapper",
-    "keywords": ["simple", "pdo", "data mapper"],
+    "keywords": ["database", "orm", "pdo", "data mapper"],
     "homepage": "https://github.com/fordnox/mikron",
     "type": "library",
     "license": "Apache-2.0",
@@ -16,5 +16,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.1"
+    },
+    "autoload": {
+        "classmap": ["Mikron.php"]
     }
 }
