@@ -34,6 +34,9 @@ Maps database values to Entity class
     print $entity->id;
     print $entity->name;
 
+    $entity->name = 'New Name';
+    $mikron->store($entity); //updates entity name in DB
+
 
 Custom entity names and table names
 ======
