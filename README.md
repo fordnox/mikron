@@ -15,6 +15,7 @@ Entity is identified by field "id"
 
 Simple model class:
 
+```php
     class Entity
     {
         /** @field */
@@ -26,9 +27,11 @@ Simple model class:
         /** Not a field */
         public $anything;
     }
+```
 
 Maps database values to Entity class
 
+```php
     $mikron = new Mikron(new Pdo(...));
     $entity = $mikron->load('entity', 1);
     print $entity->id;
@@ -36,7 +39,7 @@ Maps database values to Entity class
 
     $entity->name = 'New Name';
     $mikron->store($entity); //updates entity name in DB
-
+```
 
 Custom entity names and table names
 ======
@@ -44,4 +47,6 @@ Custom entity names and table names
 Define custom function to map entities to table names and vice versa.
 By default entity name is same as table name.
 
+```php
     $this->mikron->setNameResolver(function($type, $name) { return ucfirst($name); });
+```
